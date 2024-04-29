@@ -23,8 +23,8 @@ type DateAccessor = (d: DateDatum, i?: number) => Date;
 type TemperatureAccessor = (d: WeatherDatum, i?: number) => number;
 
 type BaseDimensions = {
-  height: number;
-  width: number;
+  height?: number;
+  width?: number;
   marginTop?: number;
   marginRight?: number;
   marginBottom?: number;

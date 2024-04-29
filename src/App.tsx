@@ -4,6 +4,7 @@ import { getTimelineData, getScatterData } from "./utils/dummyData";
 // import { useInterval } from "usehooks-ts";
 
 import Timeline from "./Timeline";
+import Histogram from "./Histogram";
 import "./App.css";
 
 const parseDate = d3.timeParse("%m/%d/%Y");
@@ -32,6 +33,11 @@ function App() {
           xAccessor={dateAccessor}
           yAccessor={temperatureAccessor}
           label="Temperature"
+        />
+        <Histogram
+          data={data.scatter}
+          xAccessor={humidityAccessor}
+          label="Humidity"
         />
       </div>
     </div>

@@ -10,9 +10,10 @@ type AxisProps = {
   dimension: "x" | "y";
   scale:
     | (number[] & d3.ScaleLinear<number, number, never>)
-    | (Date[] & d3.ScaleTime<number, number, never>);
+    | (Date[] & d3.ScaleTime<number, number, never>)
+    | d3.ScaleLinear<number, number, never>;
   label?: string;
-  formatTick: (
+  formatTick?: (
     n:
       | number
       | {
@@ -26,7 +27,7 @@ const Axis = ({
   dimension = "x",
   scale,
   // scale = null, <== Why this in the book?
-  formatTick = formatNumber,
+  formatTick = d3.format(","),
   ...props
 }: AxisProps) => {
   const dimensions = useDimensionsContext();
@@ -82,7 +83,7 @@ function AxisHorizontal({
         <text
           key={tick.toString()}
           className="Axis__tick"
-          transform={`translate(${scale(tick)})`}
+          transform={`translate(${scale(tick)}, 25)`}
         >
           {formatTick(tick)}
         </text>
