@@ -1,4 +1,13 @@
-# React + TypeScript + Vite
+# React & D3 Doins
+
+I'm making some charts in React using TypeScript and the D3.js visualization library.
+This repo is based on lessons from the book "Fullstack D3 and Data Visualization"
+by Amelia Wattenberger, and the basic components are my attempt to adapt the
+JavaScript code from those examples into a TypeScript format.
+
+Run `yarn` to install dependencies and `yarn dev` to start the local dev server.
+
+## React + TypeScript + Vite README
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
@@ -17,12 +26,12 @@ If you are developing a production application, we recommend updating the config
 export default {
   // other rules...
   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
+    ecmaVersion: "latest",
+    sourceType: "module",
+    project: ["./tsconfig.json", "./tsconfig.node.json"],
     tsconfigRootDir: __dirname,
   },
-}
+};
 ```
 
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
