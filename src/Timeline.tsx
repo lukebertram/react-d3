@@ -31,6 +31,7 @@ const Timeline = ({ data, xAccessor, yAccessor, label }: TimelineProps) => {
 
   const xAccessorScaled = (d) => xScale(xAccessor(d));
   const yAccessorScaled = (d) => yScale(yAccessor(d));
+  const y0AccessorScaled = yScale(yScale.domain()[0]);
 
   console.log(dimensions);
   return (
@@ -43,6 +44,13 @@ const Timeline = ({ data, xAccessor, yAccessor, label }: TimelineProps) => {
           formatTick={formatDate}
         />
         <Axis label="Temperature" dimension="y" scale={yScale} />
+        <Line
+          type="area"
+          data={data}
+          xAccessor={xAccessorScaled}
+          yAccessor={yAccessorScaled}
+          y0Accessor={y0AccessorScaled}
+        />
         <Line
           data={data}
           xAccessor={xAccessorScaled}

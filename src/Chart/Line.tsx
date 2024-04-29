@@ -20,15 +20,14 @@ const Line = ({
   interpolation = d3.curveMonotoneX,
   ...props
 }: LineProps) => {
-  const lineGenerator = d3
-    .line()
+  const lineGenerator = d3[type]()
     .x(xAccessor)
     .y(yAccessor)
     .curve(interpolation);
 
-  // if (type === "area") {
-  //   lineGenerator.y0(y0Accessor).y1(yAccessor);
-  // }
+  if (type === "area") {
+    lineGenerator.y0(y0Accessor).y1(yAccessor);
+  }
 
   return (
     <path
