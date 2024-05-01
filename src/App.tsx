@@ -1,7 +1,7 @@
 import { useState } from "react";
 import * as d3 from "d3";
 import { getTimelineData, getScatterData } from "./utils/dummyData";
-// import { useInterval } from "usehooks-ts";
+import { useInterval } from "usehooks-ts";
 
 import Timeline from "./Timeline";
 import Histogram from "./Histogram";
@@ -21,9 +21,9 @@ const getData = () => ({
 function App() {
   const [data, setData] = useState(getData());
 
-  // useInterval(() => {
-  //   setData(getData());
-  // }, 8000);
+  useInterval(() => {
+    setData(getData());
+  }, 5000);
 
   return (
     <div className="App">
